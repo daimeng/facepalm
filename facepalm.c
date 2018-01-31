@@ -41,5 +41,21 @@ int main(/*int argc, char **argv*/)
   nxor(c, "5$/,\"=(- ", 9);
 
   printf("%s %s %s\n", a, b, c);
+  
+  printf("%s: ", q);
+  fgets(s, 31, stdin);
+
+  char first[] = "   ";
+  char second[] = "   ";
+
+  char guess[] = {57,8,63};
+  char what[] = {0,15,50};
+  fold_to(s, strlen(s) - 1, first, 3);
+  nxor(first, guess, 3);
+
+  fold_to(s, strlen(s) - 1, second, 3);
+  nxor(second, what, 3);
+
+  printf("%s %s\n", first, second);
   return 0;
 }
